@@ -2,11 +2,13 @@
 
 class UserRegisterRequestData {
     public $username;
-    public $password;
+    public $email;
+    public $pswd;
 
-    public function __construct($username, $password) {
+    public function __construct($username, $email, $pswd) {
         $this->username = $username;
-        $this->password = $password;
+        $this->email = $email;
+        $this->pswd = $pswd;
     }
 }
 
