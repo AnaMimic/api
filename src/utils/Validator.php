@@ -1,11 +1,23 @@
 <?php
 
-function validateUserData($data) {
-    if (!$data || !isset($data['username']) || !isset($data['password'])) {
+function validateUserRegisterData($data) {
+    // Check if data exists and contains required fields
+    if (!$data || !isset($data->username) || !isset($data->pswd)) {
         return false;
     }
 
-    return new UserRegisterRequestData($data['username'], $data['password']);
+    // Return an instance of UserRegisterRequestData
+    return new UserRegisterRequestData($data->username, $data->email, $data->pswd);
+}
+
+function validateUserLoginData($data) {
+    // Check if data exists and contains required fields
+    if (!$data || !isset($data->username) || !isset($data->pswd)) {
+        return false;
+    }
+
+    // Return an instance of UserRegisterRequestData
+    return new UserLoginRequestData($data->username, $data->pswd);
 }
 
 ?>
