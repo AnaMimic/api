@@ -20,6 +20,7 @@ require_once __DIR__ . "/src/utils/Validator.php";
 require_once __DIR__ . "/src/database/Database.php";
 // Requests
 require_once __DIR__ . "/src/requests/UserRegisterRequestData.php";
+require_once __DIR__ . "/src/requests/UserLoginRequestData.php";
 
 set_error_handler("ErrorHandler::handleError");
 set_exception_handler("ErrorHandler::handleException");
