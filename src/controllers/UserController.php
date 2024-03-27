@@ -28,10 +28,16 @@ class UserController {
     //     curl -X POST http://localhost/api/user/register \
     // -H "Content-Type: application/json" \
     // -d '{
-    //   "username": "your_username",
-    //   "email": "your_email@example.com",
-    //   "pswd": "your_password"
+    //   "username": "test",
+    //   "email": "test@example.com",
+    //   "pswd": "test"
     // }'
+
+    // RESPONSE EXAMPLE
+    // {
+    //     "success": true,
+    //     "message": "User successfully registered"
+    // }
     public function register() {
         // Set headers for JSON response
         header("Content-Type: application/json");
@@ -92,6 +98,13 @@ class UserController {
     //   "username": "your_username",
     //   "pswd": "your_password"
     // }'
+
+    // RESPONSE EXAMPLE
+    // {
+    //     "success": true,
+    //     "message": "User logged in successfully",
+    //     "authToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjIsImlzc3VlZEF0IjoxNzExNTU4NjkyLCJleHBpcmF0aW9uIjoxNzExNTYyMjkyfQ.7_6hcm821Hz2phyN0pbfTc7bMMtA6XIhUqQf0MqMGko"
+    // }
     public function login() {
         // Set headers for JSON response
         header("Content-Type: application/json");
@@ -151,6 +164,9 @@ class UserController {
         // Your JWT secret key
         $secretKey = "your-secret-key";
 
+        // Hash the secret key before storage
+        // $hashedSecretKey = hash('sha256', $secretKey);
+        
         // Token payload
         $payload = array(
             "userId" => $userId,
