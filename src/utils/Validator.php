@@ -20,4 +20,24 @@ function validateUserLoginData($data) {
     return new UserLoginRequestData($data->username, $data->pswd);
 }
 
+function validateDataGeneSearchData($data) {
+    // Check if data exists and contains required fields
+    if (!$data || !isset($data->genename)) {
+        return false;
+    }
+
+    // Return an instance of DataGeneSearchRequestData
+    return new DataGeneSearchRequestData($data->genename);
+}
+
+function validateDataBreedSearchData($data) {
+    // Check if data exists and contains required fields
+    if (!$data || !isset($data->breed)) {
+        return false;
+    }
+
+    // Return an instance of DataGeneSearchRequestData
+    return new DataBreedSearchRequestData($data->breed);
+}
+
 ?>
