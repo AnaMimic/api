@@ -21,6 +21,8 @@ require_once __DIR__ . "/src/database/Database.php";
 // Requests
 require_once __DIR__ . "/src/requests/UserRegisterRequestData.php";
 require_once __DIR__ . "/src/requests/UserLoginRequestData.php";
+require_once __DIR__ . "/src/requests/DataGeneSearchRequestData.php";
+require_once __DIR__ . "/src/requests/DataBreedSearchRequestData.php";
 
 set_error_handler("ErrorHandler::handleError");
 set_exception_handler("ErrorHandler::handleException");
